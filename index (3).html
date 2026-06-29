@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam Hicks — Brand Partnerships & Sponsorship Marketing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #111118;
+    --bg3: #1a1a24;
+    --border: #2a2a38;
+    --accent: #4f6ef7;
+    --accent2: #7c3aed;
+    --gold: #f59e0b;
+    --text: #e8e8f0;
+    --muted: #7070a0;
+    --light: #b0b0d0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 60px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--text); }
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 60px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(79,110,247,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content { max-width: 800px; position: relative; z-index: 1; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 28px;
+  }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 7vw, 88px);
+    line-height: 1.05; color: var(--text);
+    margin-bottom: 24px; letter-spacing: -1px;
+  }
+  .hero h1 em { font-style: italic; color: var(--muted); }
+  .hero-sub { font-size: 18px; color: var(--light); max-width: 560px; line-height: 1.7; margin-bottom: 48px; font-weight: 300; }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: #fff;
+    padding: 14px 28px; border-radius: 6px;
+    text-decoration: none; font-size: 14px; font-weight: 600;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: #3d5ce0; transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border); color: var(--light);
+    padding: 14px 28px; border-radius: 6px;
+    text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
+
+  /* STATS */
+  .stats-strip {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 60px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .stat-item { text-align: center; padding: 0 20px; border-right: 1px solid var(--border); }
+  .stat-item:last-child { border-right: none; }
+  .stat-number { font-family: 'Playfair Display', serif; font-size: 42px; color: var(--text); line-height: 1; margin-bottom: 6px; }
+  .stat-accent { color: var(--accent); }
+  .stat-gold { color: var(--gold); }
+  .stat-label { font-size: 11px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+
+  /* SECTIONS */
+  section { padding: 100px 60px; }
+  .section-eyebrow {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 48px); color: var(--text); margin-bottom: 16px; line-height: 1.15; }
+  .section-sub { font-size: 16px; color: var(--muted); max-width: 520px; line-height: 1.7; margin-bottom: 60px; }
+
+  /* EXPERIENCE */
+  .experience { background: var(--bg); }
+  .exp-grid { display: flex; flex-direction: column; gap: 2px; }
+  .exp-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 8px; padding: 36px 40px;
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 40px; transition: border-color 0.2s, background 0.2s;
+  }
+  .exp-card:hover { border-color: rgba(79,110,247,0.4); background: var(--bg3); }
+  .exp-company { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+  .exp-title { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+  .exp-date { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .exp-tag { display: inline-block; background: rgba(79,110,247,0.12); color: var(--accent); font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-top: 10px; }
+  .exp-tag.gold { background: rgba(245,158,11,0.12); color: var(--gold); }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li { font-size: 14px; color: var(--light); line-height: 1.65; padding: 6px 0 6px 18px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .exp-bullets li:last-child { border-bottom: none; }
+  .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 12px; }
+  .exp-highlight { color: var(--text); font-weight: 600; }
+
+  /* FEATURED WORK */
+  .featured { background: var(--bg2); }
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .work-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 10px; padding: 36px 32px;
+    position: relative; overflow: hidden;
+    transition: all 0.25s;
+  }
+  .work-card:hover { border-color: rgba(79,110,247,0.5); transform: translateY(-3px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .work-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .work-card.blue::before { background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+  .work-card.gold::before { background: linear-gradient(90deg, var(--gold), #f97316); }
+  .work-card.purple::before { background: linear-gradient(90deg, #7c3aed, #db2777); }
+  .work-icon { font-size: 32px; margin-bottom: 20px; display: block; }
+  .work-org { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .work-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 14px; line-height: 1.25; }
+  .work-desc { font-size: 13px; color: var(--light); line-height: 1.7; margin-bottom: 24px; }
+  .work-metrics { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+  .metric { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--muted); }
+  .metric-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .metric-dot.gold { background: var(--gold); }
+  .metric strong { color: var(--text); }
+  .work-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(79,110,247,0.15); color: var(--accent);
+    border: 1px solid rgba(79,110,247,0.3);
+    padding: 10px 20px; border-radius: 6px;
+    text-decoration: none; font-size: 13px; font-weight: 600;
+    transition: all 0.2s; cursor: pointer;
+  }
+  .work-btn:hover { background: rgba(79,110,247,0.25); border-color: var(--accent); }
+  .work-btn.gold-btn { background: rgba(245,158,11,0.12); color: var(--gold); border-color: rgba(245,158,11,0.3); }
+  .work-btn.gold-btn:hover { background: rgba(245,158,11,0.22); border-color: var(--gold); }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85); z-index: 1000;
+    align-items: center; justify-content: center;
+    backdrop-filter: blur(8px);
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 48px;
+    max-width: 560px; width: 90%;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 16px; right: 20px;
+    background: none; border: none; color: var(--muted);
+    font-size: 24px; cursor: pointer; line-height: 1;
+  }
+  .modal-close:hover { color: var(--text); }
+  .modal-icon { font-size: 40px; margin-bottom: 16px; display: block; }
+  .modal-title { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--text); margin-bottom: 8px; }
+  .modal-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+  .modal-desc { font-size: 14px; color: var(--light); line-height: 1.7; margin-bottom: 32px; }
+  .modal-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .modal-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px; border-radius: 6px;
+    text-decoration: none; font-size: 14px; font-weight: 600;
+    transition: all 0.2s;
+  }
+  .modal-btn.primary { background: var(--accent); color: #fff; }
+  .modal-btn.primary:hover { background: #3d5ce0; }
+  .modal-btn.secondary { border: 1px solid var(--border); color: var(--light); }
+  .modal-btn.secondary:hover { border-color: var(--muted); color: var(--text); }
+  .modal-note { font-size: 12px; color: var(--muted); margin-top: 20px; line-height: 1.6; }
+
+  /* SKILLS */
+  .skills-section { background: var(--bg); }
+  .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .skill-group { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 28px 32px; }
+  .skill-group-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--light); font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 4px; }
+
+  /* ABOUT */
+  .about { background: var(--bg2); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-text p { font-size: 15px; color: var(--light); line-height: 1.8; margin-bottom: 20px; }
+  .about-facts { display: flex; flex-direction: column; gap: 16px; }
+  .fact-item { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; display: flex; align-items: center; gap: 16px; }
+  .fact-icon { font-size: 24px; flex-shrink: 0; }
+  .fact-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+  .fact-value { font-size: 14px; font-weight: 600; color: var(--text); }
+
+  /* CONTACT */
+  .contact { background: var(--bg); text-align: center; }
+  .contact-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); color: var(--text); margin-bottom: 16px; line-height: 1.1; }
+  .contact-sub { font-size: 16px; color: var(--muted); margin-bottom: 48px; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .contact-link { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 6px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+  .contact-link.email { background: var(--accent); color: #fff; }
+  .contact-link.email:hover { background: #3d5ce0; }
+  .contact-link.linkedin { border: 1px solid var(--border); color: var(--light); }
+  .contact-link.linkedin:hover { border-color: var(--muted); color: var(--text); }
+
+  footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 24px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--muted); }
+
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { gap: 20px; }
+    .hero { padding: 100px 24px 60px; }
+    section { padding: 70px 24px; }
+    .stats-strip { grid-template-columns: repeat(2,1fr); padding: 30px 24px; gap: 20px; }
+    .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+    .exp-card { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
+    .work-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Adam Hicks</div>
+  <div class="nav-links">
+    <a href="#experience">Experience</a>
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Brand Partnerships & Sponsorship Marketing</div>
+    <h1>Brands connect<br>to people <em>here.</em></h1>
+    <p class="hero-sub">Marketing professional with Fortune 500 sponsorship activation experience, live event operations across a professional NBA franchise, and measurable campaign results — ready to bring brands to life at scale.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn-primary">View My Work →</a>
+      <a href="#contact" class="btn-ghost">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-item fade-up">
+    <div class="stat-number stat-gold">75<span style="font-size:24px">+</span></div>
+    <div class="stat-label">Countries Reached</div>
+  </div>
+  <div class="stat-item fade-up">
+    <div class="stat-number stat-accent">10K<span style="font-size:24px">+</span></div>
+    <div class="stat-label">Event Attendees</div>
+  </div>
+  <div class="stat-item fade-up">
+    <div class="stat-number">60<span style="font-size:24px">%</span></div>
+    <div class="stat-label">Campaign Sign-Up Rate</div>
+  </div>
+  <div class="stat-item fade-up">
+    <div class="stat-number">18<span style="font-size:24px">%</span></div>
+    <div class="stat-label">Territory Growth</div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-eyebrow">Career</div>
+  <h2 class="section-title">Where I've built.</h2>
+  <p class="section-sub">From Fortune 500 sponsorship stages to NBA arenas — a track record of showing up and delivering.</p>
+  <div class="exp-grid">
+
+    <div class="exp-card fade-up">
+      <div class="exp-meta">
+        <div class="exp-company">Ohio Business Machines</div>
+        <div class="exp-title">Territory Account Manager</div>
+        <div class="exp-date">Jun 2025 – Present</div>
+        <div class="exp-tag">Current Role</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Grew territory book <span class="exp-highlight">18% in year one</span> across 77 client accounts through consultative relationship management</li>
+        <li>Planned and executed email & direct mail campaigns — achieving a <span class="exp-highlight">60% sign-up rate</span> among existing clients and <span class="exp-highlight">25% conversion</span> with net-new prospects</li>
+        <li>Maintained key partnerships through structured quarterly business reviews, driving long-term retention</li>
+        <li>Analyzed pipeline data in Sherpa Navigator CRM to surface engagement trends and inform strategy</li>
+      </ul>
+    </div>
+
+    <div class="exp-card fade-up">
+      <div class="exp-meta">
+        <div class="exp-company">Cleveland Cliffs</div>
+        <div class="exp-title">Strategic Partner Intern — Sponsorship & Brand Activation</div>
+        <div class="exp-date">May – Aug 2024</div>
+        <div class="exp-tag gold">Fortune 500</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Coordinated end-to-end brand activation across <span class="exp-highlight">4+ venues</span> at the 2024 Pan-American Masters Games — reaching <span class="exp-highlight">4,000+ athletes from 75+ countries</span> and ~10,000 total attendees</li>
+        <li>Managed sponsorship asset placement, brand inventory, and compliance across all event touchpoints</li>
+        <li>Delivered stakeholder-facing performance reports using <span class="exp-highlight">CrowdFire & Zoomph</span> analytics</li>
+        <li>Contributed to branded promotional materials supporting partnership visibility goals</li>
+      </ul>
+    </div>
+
+    <div class="exp-card fade-up">
+      <div class="exp-meta">
+        <div class="exp-company">Cleveland Cavaliers (NBA)</div>
+        <div class="exp-title">Event Operations & VIP Services</div>
+        <div class="exp-date">Oct 2022 – Jul 2025</div>
+        <div class="exp-tag">Live Events</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Supported live game-day operations at a professional NBA franchise for <span class="exp-highlight">nearly 3 years</span></li>
+        <li>Managed VIP credentialing, access control, and logistics in high-profile environments alongside players and performers</li>
+        <li>Operated with discretion and composure under pressure across dozens of high-stakes live events</li>
+      </ul>
+    </div>
+
+    <div class="exp-card fade-up">
+      <div class="exp-meta">
+        <div class="exp-company">Cleveland Cliffs</div>
+        <div class="exp-title">Sales & Marketing Intern</div>
+        <div class="exp-date">May – Aug 2023</div>
+        <div class="exp-tag gold">Fortune 500</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Conducted OEM market research and competitive analysis to support go-to-market strategy</li>
+        <li>Built foundational knowledge of B2B account workflows, pipeline tracking, and commercial cycles</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURED WORK -->
+<section class="featured" id="work">
+  <div class="section-eyebrow">Featured Work</div>
+  <h2 class="section-title">Projects that moved the needle.</h2>
+  <p class="section-sub">Real activations, real campaigns, real results — not hypotheticals.</p>
+
+  <div class="work-grid">
+
+    <div class="work-card blue fade-up">
+      <span class="work-icon">🏟️</span>
+      <div class="work-org">Cleveland Cliffs · 2024</div>
+      <div class="work-title">Pan-American Masters Games Activation</div>
+      <div class="work-desc">Owned the full sponsorship activation for Cleveland Cliffs at a major international multi-sport event — coordinating brand placements across 4+ venues, managing asset compliance, and delivering stakeholder performance reporting.</div>
+      <div class="work-metrics">
+        <div class="metric"><div class="metric-dot"></div><strong>4,000+</strong> athletes from 75+ countries</div>
+        <div class="metric"><div class="metric-dot"></div><strong>~10,000</strong> total event attendees</div>
+        <div class="metric"><div class="metric-dot"></div><strong>4+ venues</strong> coordinated simultaneously</div>
+        <div class="metric"><div class="metric-dot"></div>Analytics via <strong>CrowdFire & Zoomph</strong></div>
+      </div>
+      <a class="work-btn" onclick="openModal('panam')">📊 View Case Study →</a>
+    </div>
+
+    <div class="work-card gold fade-up">
+      <span class="work-icon">📧</span>
+      <div class="work-org">Ohio Business Machines · 2025</div>
+      <div class="work-title">Tech Trade Show Marketing Campaigns</div>
+      <div class="work-desc">Designed and executed integrated email and direct mail campaigns to drive attendance at technology trade shows — handling copy, list management, and performance tracking from start to finish.</div>
+      <div class="work-metrics">
+        <div class="metric"><div class="metric-dot gold"></div><strong>60%</strong> sign-up rate among existing clients</div>
+        <div class="metric"><div class="metric-dot gold"></div><strong>46 of 77</strong> accounts converted</div>
+        <div class="metric"><div class="metric-dot gold"></div><strong>25%</strong> conversion with net-new prospects</div>
+        <div class="metric"><div class="metric-dot gold"></div>End-to-end ownership: copy → results</div>
+      </div>
+      <a class="work-btn gold-btn" onclick="openModal('techshow')">📊 View Case Study →</a>
+    </div>
+
+
+    <div class="work-card purple fade-up">
+      <span class="work-icon">🍗</span>
+      <div class="work-org">John Carroll University · Dec 2023</div>
+      <div class="work-title">#SnappingKFC Campaign Pitch</div>
+      <div class="work-desc">A social-first brand campaign pitch for KFC built around the hashtag #SnappingKFC — targeting Gen Z and Millennials through a contest-driven UGC loop across Instagram, TikTok, Snapchat, and X.</div>
+      <div class="work-metrics">
+        <div class="metric"><div class="metric-dot" style="background:#7c3aed"></div><strong>4 platforms</strong> — Instagram, TikTok, X, Snapchat</div>
+        <div class="metric"><div class="metric-dot" style="background:#7c3aed"></div><strong>Gen Z & Millennial</strong> target audience</div>
+        <div class="metric"><div class="metric-dot" style="background:#7c3aed"></div>Full KPI & measurement framework</div>
+        <div class="metric"><div class="metric-dot" style="background:#7c3aed"></div>Contest activation + prize structure</div>
+      </div>
+      <a class="work-btn" style="background:rgba(124,58,237,0.15);color:#a78bfa;border-color:rgba(124,58,237,0.3)" onclick="openModal('kfc')">📊 View Case Study →</a>
+    </div>
+    <div class="work-card fade-up" style="border-color:#1a2a4a;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0d2b6b,#c8102e)"></div>
+      <span class="work-icon">⚾</span>
+      <div class="work-org">Boston Red Sox · 2026</div>
+      <div class="work-title">Partnership Strategy & Community Activation</div>
+      <div class="work-desc">A full partnership development strategy for the Boston Red Sox — identifying high-value local and national sponsorship categories, community activation programs, and a data-driven path to multi-year revenue growth.</div>
+      <div class="work-metrics">
+        <div class="metric"><div class="metric-dot" style="background:#c8102e"></div><strong>12M+</strong> national fan base reached</div>
+        <div class="metric"><div class="metric-dot" style="background:#c8102e"></div><strong>$22M</strong> 3-year revenue target</div>
+        <div class="metric"><div class="metric-dot" style="background:#c8102e"></div>Local + national partnership tiers</div>
+        <div class="metric"><div class="metric-dot" style="background:#c8102e"></div>Community activation framework</div>
+      </div>
+      <a class="work-btn" style="background:rgba(200,16,46,0.12);color:#e05570;border-color:rgba(200,16,46,0.3)" onclick="openModal('redsox')">📊 View Case Study →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL: Pan-Am -->
+<div class="modal-overlay" id="modal-panam" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalById('modal-panam')">×</button>
+    <span class="modal-icon">🏟️</span>
+    <div class="modal-title">Pan-American Masters Games</div>
+    <div class="modal-sub">Cleveland Cliffs · Sponsorship Activation Recap · Summer 2024</div>
+    <div class="modal-desc">
+      Full end-to-end sponsorship activation for Cleveland Cliffs at the 2024 Pan-American Masters Games in Cleveland, OH. Managed brand placements across 4+ venues, coordinated with internal and external stakeholders, delivered performance reporting using CrowdFire and Zoomph, and contributed to branded promotional materials — reaching 4,000+ athletes from 75+ countries and ~10,000 total attendees.
+    </div>
+    <div class="modal-actions">
+      <a href="https://www.dropbox.com/scl/fi/pr3migz9iy4qal807ci2a/PanAm_Games_Activation_Recap-1.pptx?rlkey=20mqtgxmdnn1al52ktf711sao&st=zcbdhpr2&dl=1" target="_blank" class="modal-btn primary">⬇ Download Presentation</a>
+      <a href="mailto:ahicks24@jcu.edu" class="modal-btn secondary">Get In Touch</a>
+    </div>
+    
+  </div>
+</div>
+
+<!-- MODAL: Tech Show -->
+<div class="modal-overlay" id="modal-techshow" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalById('modal-techshow')">×</button>
+    <span class="modal-icon">📧</span>
+    <div class="modal-title">Tech Trade Show Campaigns</div>
+    <div class="modal-sub">Ohio Business Machines · Email & Direct Mail Campaign Results · 2025</div>
+    <div class="modal-desc">
+      Planned and executed end-to-end email and direct mail marketing campaigns for technology trade shows. Wrote all copy, managed distribution lists, and tracked performance — achieving a 60% sign-up rate among 77 existing client accounts and 25% conversion among net-new prospects.
+    </div>
+    <div class="modal-actions">
+      
+      <a href="mailto:ahicks24@jcu.edu" class="modal-btn secondary">Get In Touch</a>
+    </div>
+    
+  </div>
+</div>
+
+<!-- MODAL: KFC -->
+<div class="modal-overlay" id="modal-kfc" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalById('modal-kfc')">×</button>
+    <span class="modal-icon">🍗</span>
+    <div class="modal-title">#SnappingKFC</div>
+    <div class="modal-sub">KFC Brand Campaign Pitch · John Carroll University · December 2023</div>
+    <div class="modal-desc">
+      A full social-first brand campaign pitch developed for KFC, built around the original tagline #SnappingKFC. The campaign targets Gen Z and Millennial audiences through a contest-driven UGC loop across Instagram, TikTok, Snapchat, and X — leveraging KFC's iconic crispy texture as a sensory brand signature. Includes target audience analysis, platform strategy, prize structure, communication objectives, and a full KPI measurement framework.
+    </div>
+    <div class="modal-actions">
+      <a href="https://www.dropbox.com/scl/fi/2ukrkcby65eah9d7a5u0b/SnappingKFC_Campaign_Pitch.pptx?rlkey=ddx8gvakuvkxo6n5o1up6xf3l&st=xmkoo09f&dl=1" target="_blank" class="modal-btn primary" style="background:#7c3aed">⬇ Download Presentation</a>
+      <a href="mailto:ahicks24@jcu.edu" class="modal-btn secondary">Get In Touch</a>
+    </div>
+    <p class="modal-note">📎 Opens as a PowerPoint file. Compatible with Microsoft PowerPoint and Google Slides.</p>
+  </div>
+</div>
+
+<!-- MODAL: Red Sox -->
+<div class="modal-overlay" id="modal-redsox" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalById('modal-redsox')">×</button>
+    <span class="modal-icon">⚾</span>
+    <div class="modal-title">Boston Red Sox Partnership Strategy</div>
+    <div class="modal-sub">Partnership Strategy & Community Activation · 2026</div>
+    <div class="modal-desc">
+      A comprehensive partnership development strategy for the Boston Red Sox covering local Greater Boston activation, national category-exclusive sponsorships, community relations programs, and a structured 3-year revenue growth model. Includes deal tier frameworks, an activation pipeline from prospect to renewal, player-led community moments, and revenue projections scaling from $12.1M to $22M over three years.
+    </div>
+    <div class="modal-actions">
+      <a href="https://www.dropbox.com/scl/fi/s17neoevlluq7g4lv2fce/Red-Sox-Partner-Proposal.pptx?rlkey=8j0s9m34w6jnjh284bcgzpkwu&st=pq2zzoc0&dl=1" target="_blank" class="modal-btn primary" style="background:#c8102e">⬇ Download Presentation</a>
+      <a href="mailto:ahicks24@jcu.edu" class="modal-btn secondary">Get In Touch</a>
+    </div>
+    <p class="modal-note">📎 Opens as a PowerPoint file. Compatible with Microsoft PowerPoint and Google Slides.</p>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="section-eyebrow">Capabilities</div>
+  <h2 class="section-title">What I bring to the table.</h2>
+  <p class="section-sub">A mix of strategic marketing, live event execution, and data-backed performance reporting.</p>
+  <div class="skills-grid">
+    <div class="skill-group fade-up">
+      <div class="skill-group-title">Marketing & Partnerships</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Sponsorship Activation</span>
+        <span class="skill-tag">Brand Partnerships</span>
+        <span class="skill-tag">Event Marketing</span>
+        <span class="skill-tag">Email Marketing</span>
+        <span class="skill-tag">Direct Mail</span>
+        <span class="skill-tag">Integrated Marketing</span>
+        <span class="skill-tag">Experiential Marketing</span>
+        <span class="skill-tag">Partnership Development</span>
+      </div>
+    </div>
+    <div class="skill-group fade-up">
+      <div class="skill-group-title">Analytics & Reporting</div>
+      <div class="skill-tags">
+        <span class="skill-tag">CrowdFire</span>
+        <span class="skill-tag">Zoomph</span>
+        <span class="skill-tag">Social Media Analytics</span>
+        <span class="skill-tag">Performance Reporting</span>
+        <span class="skill-tag">Brand Visibility Tracking</span>
+        <span class="skill-tag">Quarterly Business Reviews</span>
+        <span class="skill-tag">Market Research</span>
+      </div>
+    </div>
+    <div class="skill-group fade-up">
+      <div class="skill-group-title">Tools & Platforms</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Microsoft PowerPoint</span>
+        <span class="skill-tag">Microsoft Excel</span>
+        <span class="skill-tag">Sherpa Navigator CRM</span>
+        <span class="skill-tag">Canva</span>
+        <span class="skill-tag">Google Workspace</span>
+        <span class="skill-tag">Microsoft Teams</span>
+        <span class="skill-tag">Outlook</span>
+        <span class="skill-tag">ShipStation</span>
+      </div>
+    </div>
+    <div class="skill-group fade-up">
+      <div class="skill-group-title">Core Strengths</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Stakeholder Management</span>
+        <span class="skill-tag">Cross-Functional Collaboration</span>
+        <span class="skill-tag">Client Relationship Management</span>
+        <span class="skill-tag">Project Management</span>
+        <span class="skill-tag">Live Event Operations</span>
+        <span class="skill-tag">VIP Experience</span>
+        <span class="skill-tag">Campaign Execution</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-eyebrow">About</div>
+  <h2 class="section-title">The person behind the work.</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a brand partnerships and event marketing professional based in Northeast Ohio, with a genuine passion for the work that connects brands to people in meaningful, measurable ways — whether that's a sponsorship activation in front of 10,000 people or a targeted email campaign that drives real results.</p>
+      <p>My background sits at an unusual intersection: Fortune 500 sponsorship experience, nearly 3 years of live event operations at a professional NBA franchise, and hands-on campaign execution with proven metrics. I understand both the strategic and operational sides of marketing.</p>
+      <p>I'm a former NCAA Division III football player, which shaped how I approach every project — with discipline, accountability, and a team-first mindset. I'm competitive, adaptable, and energized by fast-moving environments where the work actually matters.</p>
+      <p>Currently open to opportunities in sponsorship activation, brand partnerships, event marketing, and marketing communications — with a focus on Cleveland, Nashville, Pittsburgh, New York City, and remote/hybrid roles.</p>
+    </div>
+    <div class="about-facts">
+      <div class="fact-item">
+        <div class="fact-icon">🎓</div>
+        <div>
+          <div class="fact-label">Education</div>
+          <div class="fact-value">B.A. Marketing Communications — John Carroll University, 2024</div>
+        </div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-icon">🏈</div>
+        <div>
+          <div class="fact-label">Athletics</div>
+          <div class="fact-value">NCAA Division III Football — 4 years</div>
+        </div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-icon">📍</div>
+        <div>
+          <div class="fact-label">Based In</div>
+          <div class="fact-value">Aurora, OH — Open to Cleveland, Nashville, Pittsburgh, NYC & Remote</div>
+        </div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-icon">🎯</div>
+        <div>
+          <div class="fact-label">Target Roles</div>
+          <div class="fact-value">Sponsorship, Brand Partnerships, Event & Experiential Marketing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-eyebrow" style="justify-content:center">Let's Connect</div>
+  <h2 class="contact-title">Ready to work<br>together?</h2>
+  <p class="contact-sub">Whether you have a role in mind or just want to connect — I'd love to hear from you.</p>
+  <div class="contact-links">
+    <a href="mailto:ahicks24@jcu.edu" class="contact-link email">✉ ahicks24@jcu.edu</a>
+    <a href="https://linkedin.com/in/adam-hicks-05504b201" class="contact-link linkedin" target="_blank">in LinkedIn</a>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Adam Hicks — Brand Partnerships & Marketing</div>
+  <div>Aurora, OH · Open to Hybrid & Remote</div>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Modal
+  function openModal(id) {
+    document.getElementById('modal-' + id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(e) {
+    if (e.target.classList.contains('modal-overlay')) {
+      e.target.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  function closeModalById(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+</script>
+
+</body>
+</html>
